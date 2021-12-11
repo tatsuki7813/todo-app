@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import { TitleLabel } from "../../libs";
+import { TitleLabel } from "@/libs";
 
 export const Todo: VFC = () => {
   return (
