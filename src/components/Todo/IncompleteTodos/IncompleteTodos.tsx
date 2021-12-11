@@ -1,5 +1,6 @@
 import { VFC } from "react";
+import { TitleLabel } from "@/libs";
 
 export const IncompleteTodos: VFC = () => {
-  return <p>Incomplete todos components.</p>;
+  return <TitleLabel text="未完了のTODO" />;
 };
