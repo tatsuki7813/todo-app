@@ -1,6 +1,18 @@
 import { VFC } from "react";
 import { TitleLabel } from "@/libs";
+import { useIncompleteTodos } from "./hooks";
 
 export const IncompleteTodos: VFC = () => {
-  return <TitleLabel text="未完了のTODO" />;
+  const { incompleteTodos } = useIncompleteTodos();
+
+  return (
+    <>
+      <TitleLabel text="未完了のTODO" />
+      <ul>
+        {incompleteTodos.map(({ id, content }) => (
+          <li key={id}>{content}</li>
+        ))}
+      </ul>
+    </>
+  );
 };
