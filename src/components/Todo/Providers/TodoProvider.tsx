@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   createContext,
   ReactNode,
@@ -8,7 +7,7 @@ import {
   VFC,
 } from "react";
 import { Todo } from "@/types/todo";
-const TODO_DATA_URL = "http://localhost:3100/todos";
+import { getAllTodos } from "@/api/todo";
 
 type Props = {
   children: ReactNode;
@@ -18,13 +17,8 @@ export const Context = createContext<Todo[]>([]);
 
 export const TodoProvider: VFC<Props> = ({ children }) => {
   const [todos, setTodos] = useState<Todo[]>([]);
-
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get<Todo[]>(TODO_DATA_URL);
-      setTodos(res.data);
-    };
-    fetchData();
+    getAllTodos().then((todos) => setTodos(todos));
   }, []);
 
   return <Context.Provider value={todos}>{children}</Context.Provider>;
