@@ -5,7 +5,12 @@ import { useTodos } from "../Providers";
 import { addTodo } from "@/api/todo";
 
 export const useTodoForm = () => {
-  const { register, handleSubmit, reset } = useForm<Todo>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Todo>();
   const { todos, setTodos } = useTodos();
 
   const handleSubmitTodo = handleSubmit((data: Pick<Todo, "content">) => {
@@ -16,5 +21,5 @@ export const useTodoForm = () => {
     });
   });
 
-  return { register, handleSubmitTodo };
+  return { register, handleSubmitTodo, errors };
 };
