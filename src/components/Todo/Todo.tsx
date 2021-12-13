@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import { TitleLabel } from "@/libs";
+import { TitleLabel } from "@/libs/components";
 import { CompleteTodos } from "./CompleteTodos";
 import { IncompleteTodos } from "./IncompleteTodos";
 import { TodoInputForm } from "./TodoInputForm";
