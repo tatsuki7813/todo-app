@@ -2,7 +2,7 @@
 
 ### `git clone https://github.com/tatsuki7813/todo-app`
 
-クローンしてきます。
+クローンします。
 
 ### `yarn install`
 
